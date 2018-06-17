@@ -41,7 +41,7 @@ try:
         print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                               message.offset, message.key,
                                               message.value))
-        test=message.value
+
         cur.execute("INSERT INTO temperature(temperature_value) VALUES (%.4f);" % message.value["temperature"])
             
     consumer.close()
